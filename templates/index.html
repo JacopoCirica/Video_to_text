@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+    </style>
+{% endblock %}
+{% block body %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <h3>{{ form.name.label }}</h3>
+    <h4>{{ form.name() }}</h4>
+    <span>{{ form.submit() }}</span>
+</form>
+{% if name %}
+<h3>URL:</h3><span>{{ name }}</span>
+{% endif %}
+{% if title %}
+<h3>Title:</h3><span>{{ title }}</span>
+{% endif %}
+{% if description %}
+<h3>Description:</h3><span>{{ description }}</span>
+{% endif %}
+{% if keywords %}
+<h3>Keywords:</h3><span>{{ keywords }}</span>
+{% endif %}
+{% if transcript %}
+<h3>Transcript:</h3><span>{{ transcript }}</span>
+{% endif %}
+{% endblock %}
